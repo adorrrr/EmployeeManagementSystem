@@ -6,8 +6,15 @@ const Login = () => {
 
     const submitHandler = (e) =>{
         e.preventDefault()
+        console.log("email is",email)
+        console.log("password is",password)
+
+        setEmail("")
+        setPassword("")
     }
 
+
+    
 
   return (
     <div>
@@ -19,12 +26,17 @@ const Login = () => {
                 }}
                 className="flex flex-col items-center justify-center">
                     <input
-                    value={email }
-                    onChange={()=>{
-                        console.log(e.target.value)
+                    value={email}
+                    onChange={(e)=>{
+                        setEmail(e.target.value)
                     }}
                     required className='text-white outline-none bg-transparent border-2 border-indigo-500 text-xl py-3 px-5 rounded-full' type="email" placeholder='Enter your email'/>
-                    <input required className='text-white outline-none bg-transparent border-2 border-indigo-500 text-xl py-3 px-5 rounded-full m-3' type="password" placeholder='Enter your password'/>
+                    <input
+                    value={password}
+                    onChange={(e)=>{
+                        setPassword(e.target.value)
+                    }}
+                    required className='text-white outline-none bg-transparent border-2 border-indigo-500 text-xl py-3 px-5 rounded-full m-3' type="password" placeholder='Enter your password'/>
                     <button className='text-white outline-none bg-indigo-500 text-xl py-2 px-5 rounded-full m-3' >Login</button>
                 </form>
             </div>
